@@ -5,29 +5,24 @@
 Требуется реализовать односвязный список ,в который будут входить функции, указанные ниже: 
 
 ![alt text](https://pp.userapi.com/c851228/v851228910/ec226/BaBRe2f0Xzc.jpg)
-
 ![alt text](https://pp.userapi.com/c851228/v851228910/ec22d/pzsu7lCTTDE.jpg)
 
 Код, реализующий данные методы, должен выполнять задачи,указанные ниже:
 
 ![alt text](https://pp.userapi.com/c851228/v851228910/ec234/c-6xaTv6fFw.jpg)
-
-![alt text](https://pp.userapi.com/c850132/v850132802/110b83/yUtUvORAoa0.jpg)
+![alt text](https://pp.userapi.com/c850132/v850132802/110b8a/kRwehz90bz0.jpg)
 
 ## **Задание 2**
 
 Требуется реализовать двусвязный список ,в который будут входить функции, указанные ниже: 
 
 ![alt text](https://pp.userapi.com/c851228/v851228910/ec242/r8f6LMfBBZ0.jpg)
-
 ![alt text](https://pp.userapi.com/c851228/v851228910/ec24a/I8xFt-7GOjs.jpg)
-
 ![alt text](https://pp.userapi.com/c851228/v851228910/ec251/Gc_y2a7Bbi0.jpg)
 
 Код, реализующий данные методы, должен выполнять задачи,указанные ниже:
 
 ![alt text](https://pp.userapi.com/c851228/v851228910/ec258/PvEgVgGIbqA.jpg)
-
 ![alt text](https://pp.userapi.com/c851228/v851228910/ec25f/7TYa8IgyMvo.jpg)
 
 ## **Ход работы**

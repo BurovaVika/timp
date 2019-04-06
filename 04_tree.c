@@ -55,9 +55,14 @@ void dellist(List *listadd)
 void init(Tree *tree) { 
  tree->root = NULL;
 }
-void clear(Tree *tree) { 
- while (tree->root != NULL)
- RemoveMin(tree->root, tree);
+void clear(Tree *t_) { 
+ while (t_->root != NULL)
+ {
+     
+     RemoveMin(t_->root, t_);
+     
+     
+ }
 }
 int insert(Tree *tree, int data) { 
  Node *tm_ = (Node*)malloc(sizeof(Node));
@@ -94,15 +99,15 @@ int insert(Tree *tree, int data) {
  tree->count++;
  return 0;
 }
-int RemoveMin(Node *n, Tree *t) {
- t->count--;
- if (t->count != 1) {
+int RemoveMin(Node *n, Tree *g) {
+ g->count--;
+ if (g-> count != 1) {
  while (n->left != NULL)
  n = n->left;
  if (n->right != NULL) {
  n->right->parent = n->parent;
- if (n == t->root)
- t->root = n->right;
+ if (n == g->root)
+ g->root = n->right;
  else
  n->parent->left = n->right;
  }
@@ -113,9 +118,9 @@ int RemoveMin(Node *n, Tree *t) {
  return data;
  }
  else {
- t->root = NULL;
- t->count = 0;
- free(t->root);
+ g->root = NULL;
+ g->count = 0;
+ free(g->root);
  return 0;
  }
 }
@@ -133,7 +138,7 @@ Node *min(Node *root) {
  l = l->left;
  return l;
 }
-int findNode(Tree *tree, int data, Node **node) { 
+int findNode(Tree *tree, int data, Node *node) { 
  Node * tm_ = (Node *) malloc(sizeof(Node));
  Node *root2 = (Node *) malloc(sizeof(Node));
  root2 = tree->root;
@@ -141,7 +146,7 @@ int findNode(Tree *tree, int data, Node **node) {
  if (tm_ == NULL) {
  return 1;
  }
- *node = tm_;
+ node = tm_;
  return 0;
 }
 int rotateLeft(Tree* tree) {

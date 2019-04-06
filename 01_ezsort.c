@@ -20,7 +20,7 @@ void sorting_function(int *mass,int n)
 }
 
 int main(){
-        int n;
+         int n;
         scanf("%d",&n);
         int mass[n];
         for(int i=0;i<n;i++){

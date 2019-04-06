@@ -3,8 +3,8 @@
 
 void sorting_function(int *mass,int n)
 {
+     int t;
     int g = n-1;
-    int t;
     while(g>=1)
     {
     for(int i=0;i<n-g;i++)

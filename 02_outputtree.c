@@ -1,120 +1,142 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 typedef struct Node
 {
- int data;
- struct Node *left;
- struct Node *right;
- struct Node *parent;
+    int data;
+     struct Node *left;
+     struct Node *right;
+     struct Node *parent;
 } Node;
+
 typedef struct tree
 {
- struct Node *root;
- int count;
+     struct Node *root;
+     int count;
 } Tree;
+
 typedef struct listNode
 {
- Node *PtrTree;
- struct listNode *next;
+     Node *PtrTree;
+     struct listNode *next;
 }NodeOfList;
+
 typedef struct list
 {
- NodeOfList *first;
- NodeOfList *last;
+     NodeOfList *first;
+     NodeOfList *last;
 }List;
 void createlist(List *listadd)
 {
- listadd->first = NULL;
- listadd->last = NULL;
+     listadd->first = NULL;
+     listadd->last = NULL;
 };
+
 int push(List *listadd, Node *n)
 {
- NodeOfList *newList = (NodeOfList*)malloc(sizeof(NodeOfList));
- newList->PtrTree = n;
- newList->next = NULL;
- if (listadd->first)
- listadd->last->next = newList;
+     NodeOfList *newList = (NodeOfList*)malloc(sizeof(NodeOfList));
+     newList->PtrTree = n;
+     newList->next = NULL;
+     if (listadd->first)
+     {
+         listadd->last->next = newList;
+     }
  else
- listadd->first = newList;
+     listadd->first = newList;
  listadd->last = newList;
  return 0;
 }
+
 void dellist(List *listadd)
 {
- NodeOfList *tm_, *nlistadd;
- tm_ = listadd->first;
+     NodeOfList *tm_, *nlistadd;
+     tm_ = listadd->first;
  do
  {
- nlistadd = tm_;
- tm_ = tm_->next;
- free(nlistadd);
- } while (tm_);
+     nlistadd = tm_;
+     tm_ = tm_->next;
+     free(nlistadd);
+ } 
+ while (tm_);
  listadd->first = NULL;
  listadd->last = NULL;
 }
+
 void init(Tree *tree) { 
  tree->root = NULL;
 }
+
+
 int insert(Tree *tree, int data) { 
  Node *tm_ = (Node*)malloc(sizeof(Node));
  tm_->data = data;
- if (tree->root == NULL) {
- tm_->left = tm_->right = NULL;
- tm_->parent = NULL;
- tree->root = tm_;
- tree->count = 1;
- return 0;
+ if (tree->root == NULL)
+ {
+     tm_->left = NULL; 
+     tm_->right = NULL;
+     tm_->parent = NULL;
+     tree->root = tm_;
+     tree->count = 1;
+     return 0;
  }
  if (tm_->data == tree->root->data)
- return -1;
+     return -1;
  Node *root2 = (Node*)malloc(sizeof(Node)), *AddRoot = NULL;
  root2 = tree->root;
  while (root2 != NULL)
  {
- AddRoot = root2;
- if (data < root2->data)
- root2 = root2->left;
- else
- root2 = root2->right;
+     AddRoot = root2;
+     if (data < root2->data)
+         root2 = root2->left;
+     else
+         root2 = root2->right;
  }
- if (tm_->data == AddRoot->data) {
- return -1;
+ if (tm_->data == AddRoot->data) 
+ {
+     return -1;
  }
  tm_->parent = AddRoot;
  tm_->left = NULL;
  tm_->right = NULL;
  if (data < AddRoot->data)
- AddRoot->left = tm_;
+     AddRoot->left = tm_;
  else
- AddRoot->right = tm_;
+     AddRoot->right = tm_;
  tree->count++;
  return 0;
 }
+
 Node *search(Node *node, int data) { 
- if ((node == NULL) || (node->data == data))
- return node;
- if (data < node->data)
- return search(node->left, data);
- else
- return search(node->right, data);
+     if ((node == NULL) || (node->data == data))
+         return node;
+     if (data < node->data)
+         return search(node->left, data);
+     else
+         return search(node->right, data);
 }
-Node *min(Node *root) { 
- Node *l = root;
- while (l->left != NULL)
- l = l->left;
- return l;
+
+Node *min(Node *root)
+{ 
+     Node *l = root;
+     while (l->left != NULL)
+     l = l->left;
+     return l;
 }
-int findNode(Tree *tree, int data, Node **node) { 
- Node * tm_ = (Node *) malloc(sizeof(Node));
- Node *root2 = (Node *) malloc(sizeof(Node));
- root2 = tree->root;
- tm_ = search(root2, data);
- if (tm_ == NULL) {
- return 1;
- }
- *node = tm_;
- return 0;
+
+int findNode(Tree *tree, int data, Node *node)
+{ 
+     Node * tm_ = (Node *) malloc(sizeof(Node));
+     Node *root2 = (Node *) malloc(sizeof(Node));
+     root2 = tree->root;
+     tm_ = search(root2, data);
+     if (tm_ == NULL)
+     {
+         return 1;
+     }
+     node = tm_;
+     return 0;
 }
+
 void print_( Tree* Root)
 {
 int n = 20;

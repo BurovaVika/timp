@@ -351,24 +351,25 @@ void special (int m,Tree * tree)
      printf("%d ", treeN->right->data);
  }
 }
-int main() {
+int main()
+{
  Tree *check = (Tree*)malloc(sizeof(Node));
  init(check);
  int a[4];
  scanf("%d%d%d%d", &a[0], &a[1], &a[2], &a[3]);
  for (int i = 0; i < 4; i++)
- insert(check, a[i]);
+     insert(check, a[i]);
  print(check->root);
  scanf("%d%d%d", &a[0], &a[1], &a[2]);
  for (int i = 0; i < 3; i++)
- insert(check, a[i]);
+     insert(check, a[i]);
  print(check->root);
  int m;
  scanf("%d", &m);
  special(m,check);
  printf("\n");
  scanf("%d", &m);
-special(m,check);
+ special(m,check);
  scanf("%d", &m);
  Remove(check, m);
  print(check->root);

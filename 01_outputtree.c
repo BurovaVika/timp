@@ -94,7 +94,7 @@ int insert(Tree *tree, int data) {
  }
  if (tm_->data == AddRoot->data) 
  {
-     return -1;
+     return -1; 
  }
  tm_->parent = AddRoot;
  tm_->left = NULL;

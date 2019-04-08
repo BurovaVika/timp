@@ -113,7 +113,7 @@ Node *search(Node *node, int data) {
          return search(node->left, data);
      else
          return search(node->right, data);
-}
+} 
 
 Node *min(Node *root)
 { 

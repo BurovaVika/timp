@@ -37,7 +37,7 @@ void heapSort(int *arr, int n)
   for (int i = n - 1; i >= 1; i--)
   {
      tmp = arr[0];
-    arr[0] = arr[i];
+    arr[0] = arr[i]; 
     arr[i] = tmp;
     change(arr, 0, i - 1);
   }

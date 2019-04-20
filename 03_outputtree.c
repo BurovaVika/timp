@@ -137,53 +137,7 @@ int findNode(Tree *tree, int data, Node *node)
      return 0;
 }
 
-void print_( Tree* Root)
-{
-int n = 20;
-Node *input[n];
-int tempperem =0;
-Node *g[n];
-int tmp =0;
-Node * node = (Node*)malloc(sizeof(Node*));
-node = Root -> root;
-while(tmp <Root ->count)
-{
-while (node!= NULL)
-{
-tmp = tmp + 1;
-if(node -> right != NULL)
-{tempperem++;
-input[tempperem] = node->right;
-}
-g[tmp] = node;
-node = node->left;
-}
-node = input[tempperem];
-tempperem = tempperem - 1 ;
-}
-int i = 0;
-for ( i = 1 ;i <= tmp;i++)
-{
-printf("%d ",g[i]->data);
-}
-printf("\n");
-}
-int main()
-{
-    Tree *tree = (Tree*)malloc(sizeof(Node));
-	init(tree);
 
-	int a;
-	for (int i = 0; i < 7; i++)
-	{scanf("%d",&a);
-		insert(tree, a);
-}
-print_(tree);
-
-printf("\n");	
-
-    return 0;
-}
 
 
 void print_(Node* r) {
